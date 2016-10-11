@@ -50,8 +50,7 @@ public class AreaPerimeter extends GeometricObject{
 	/*
 	 * (non-Javadoc)
 	 * @see GeometricObject#getArea()
-	 */
-	public double getArea(){
+	 */ public double getArea(){
 		double s = (getPerimeter())/2;
 		double area = Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
 		return area;

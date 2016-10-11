@@ -7,8 +7,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import exception.AreaPerimeterException;
-import exception.InsufficientFundsException;
-package org.junit.runner.manipulation;
 
 import org.junit.runner.Description;
 import org.junit.runner.Request;
@@ -42,28 +40,17 @@ public class TriangleTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	@Test
+	@Test(expected = AreaPerimeterException.class)
 	public void testAccountFail() throws AreaPerimeterException {
-		TriangleTest.side1(1);
-		TriangleTest.side2(2);
-		TriangleTest.side3(100);
+		AreaPerimeter Triangle = new AreaPerimeter (1,2,100);
+		Triangle.getArea();
 	}
-
-public static void side1(int i) {
-		// TODO Auto-generated method stub
-		
-	}
-private static void side2(int i) {
-	// TODO Auto-generated method stub
 	
-}private static void side3(int i) {
-	// TODO Auto-generated method stub
 	
-}
-public void testAccountTrue() throws AreaPerimeterException {
-	TriangleTest.side1(2);
-	TriangleTest.side2(3);
-	TriangleTest.side3(4);
+	@Test(expected =AreaPerimeterException.class)
+	public void testAccountTrue() throws AreaPerimeterException {
+		AreaPerimeter Triangle = new AreaPerimeter(2,3,4);
+		Triangle.getArea();
 }
 
 
@@ -74,7 +61,7 @@ public void testAccountTrue() throws AreaPerimeterException {
 			assertEquals(9,perimeter,1);
 	}
 			
-		
+	@Test
 	public  void testArea(){
 		AreaPerimeter t = new AreaPerimeter(3,4,5);
 		double Area = t.getArea();
