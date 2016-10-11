@@ -41,28 +41,28 @@ public class TriangleTest {
 	public void tearDown() throws Exception {
 	}
 	@Test(expected = AreaPerimeterException.class)
-	public void testAccountFail() throws AreaPerimeterException {
+	public void testAreaPerimeterFail() throws AreaPerimeterException {
 		AreaPerimeter Triangle = new AreaPerimeter (1,2,100);
 		Triangle.getArea();
 	}
 	
 	
 	@Test(expected =AreaPerimeterException.class)
-	public void testAccountTrue() throws AreaPerimeterException {
+	public void testAreaPerimeterTrue() throws AreaPerimeterException {
 		AreaPerimeter Triangle = new AreaPerimeter(2,3,4);
 		Triangle.getArea();
 }
 
 
 	@Test
-	public void testPerimeter() {
+	public void testgetPerimeter() {
 		AreaPerimeter t = new AreaPerimeter(2,3,4);
 		 double perimeter = t.getPerimeter();
 			assertEquals(9,perimeter,1);
 	}
 			
 	@Test
-	public  void testArea(){
+	public  void testgetArea(){
 		AreaPerimeter t = new AreaPerimeter(3,4,5);
 		double Area = t.getArea();
 		assertEquals(6,Area,1);
