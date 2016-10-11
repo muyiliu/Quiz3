@@ -1,3 +1,6 @@
+import exception.AreaPerimeterException;
+import java.io.*;
+
 public class AreaPerimeter extends GeometricObject{
 	
 	public double side1 = 1;
@@ -29,7 +32,7 @@ public class AreaPerimeter extends GeometricObject{
 	/*
 	 * set three sides again
 	 */
-	public void setThree_sides(double side1, double side2, double side3) {
+	public void setThree_sides(int side1, int side2, int side3) {
 		this.side1 = side1;
 		this.side2 = side2;
 		this.side3 = side3;
@@ -55,5 +58,20 @@ public class AreaPerimeter extends GeometricObject{
 	}
 	public String toString(){
 		return "Area is" + getArea() +"Perimeter is " + getPerimeter()+"Color is"+getColor() +"Filled is"+ isFilled();
+	}
+	
+	public void CheckArea (double area)throws AreaPerimeterException {
+		if (area<= 0)
+		{
+		
+			
+			System.out.print("It's not fit requirement");
+		}
+		else
+		{
+			double checkarea = getArea();
+			throw new AreaPerimeterException(checkarea);
+			
+		}
 	}
 }
